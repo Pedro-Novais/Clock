@@ -1,0 +1,110 @@
+@mixin container{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    @include container;
+    height:100vh;
+    text-align: center;
+    background-color:#001022;
+    background-image: linear-gradient(to right, #001836, #003c8a, #0056be, #001836);
+    #clock{
+        @include container;
+        background-color: #011C40;
+        box-shadow: 0 0 2.5rem #04B2D9;
+        width:30vw;
+        height:30vw;
+        border-radius:50%;
+        background-size: cover;
+        position: relative;
+        .mark{
+            background-color: rgb(0, 195, 255) ;
+            border-radius:2rem;
+            position: absolute;
+            z-index: 3;
+        }   
+        #mark-zero{
+            width: 1%;
+            height: 10%;
+            top: 5%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+        }
+        #mark-three{
+            width: 10%;
+            height: 1%;
+            top: 50%;
+            left: 85%;
+            right: 0;
+            bottom: 0;
+        }
+        #mark-six{
+            width: 1%;
+            height: 10%;
+            top: 85%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+        }
+        #mark-nine{
+            width: 10%;
+            height: 1%;
+            top: 50%;
+            left: 5%;
+            right: 0;
+            bottom: 0;
+        }
+        #border-clock{
+            border:solid 0.5rem #04B2D9;
+            box-shadow: 0 0 2rem #063c81;
+            width:29vw;
+            height:29vw;
+            border-radius:50%;
+        }
+        #circle-central{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 2%;
+            height: 2%;
+            background: #04B2D9;
+            border-radius: 10em;
+            margin: auto;
+            z-index: 10;
+        }
+        .pointer{
+            width: 1%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            transform-origin: bottom;
+            z-index: 2;
+            border-radius: 2em;
+        }
+        #pointer-hour{
+            height: 30%;
+            background-color: #0021b6;
+        }
+        #pointer-minute{
+            height: 35%;
+            background-color: #0084ff;
+        }
+        #pointer-second{
+            height: 45%;
+            background-color: #002fff;
+            transform-origin: 50% 85%;
+        }
+    }
+}
